@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parametros</title>
+</head>
+<body>
+    <p>Primer Numero</p>
+    <input type="number" id="primerNumero">
+    <p>Segundo Numero</p>
+    <input type="number" id="segundoNumero">
+    <button onclick="mostrarResultado()">Calcular</button>
+    <h2 id="textoResultado"></h2>
+
+    <script>
+        function sumar(numero1, numero2){
+            resultado = numero1 + numero2;
+            return resultado;
+        }
+
+        function mostrarResultado(){
+            let elementoNumero1 = document.getElementById("primerNumero");
+            let elementoNumero2 = document.getElementById("segundoNumero");
+            let elementoTexto = document.getElementById("textoResultado");
+            let valor1 = parseInt(elementoNumero1.value);
+            let valor2 = parseInt(elementoNumero2.value);
+            // valor1 y valor 2 los convierte en valores de tipo entero y no tipo string para que la suma funcione
+            let elementoSuma = sumar(valor1, valor2);
+            elementoTexto.textContent = elementoSuma;
+        }
+    </script> 
+</body>
+</html>

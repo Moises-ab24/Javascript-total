@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <div class="valores">
+        <input type="number" id="val1">
+        <input type="number" id="val2"><br><br>
+    </div>
+
+    <div class="operaciones">
+        <button onclick="sumar()">+</button>
+        <button onclick="restar()">-</button>
+        <button onclick="multiplicar()">x</button>
+        <button onclick="dividir()">/</button><br><br>
+        <button onclick="raiz()">raíz</button>
+        <button onclick="potencia()">potencia</button><br>
+        <button onclick="absoluto()">absoluto</button>
+        <button onclick="random()">random</button>
+    </div>
+
+    <h2>Resultado:</h2>
+    <input id="resultado"><br><br>
+
+    <div class="redondeos">
+        <button onclick="redondear()">roud</button>
+        <button onclick="redondearAbajo()">floor</button>
+        <button onclick="redondearArriba()">ceil</button>
+    </div>
+
+    <script>
+        function sumar() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            let resultado = parseInt(numero1.value) + parseInt(numero2.value);
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function restar() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            let resultado = parseInt(numero1.value) - parseInt(numero2.value);
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function multiplicar() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            let resultado = parseInt(numero1.value) * parseInt(numero2.value);
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function dividir() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            let resultado = parseFloat(numero1.value) / parseFloat(numero2.value);
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function raiz() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            if (numero1.value !== "" && numero2.value === "") {
+                let resultado = Math.sqrt(numero1.value);
+                document.getElementById("resultado").value = resultado;
+            } else if (numero2.value !== "" && numero1.value === "") {
+                let resultado = Math.sqrt(numero2.value);
+                document.getElementById("resultado").value = resultado;
+            } else {
+                alert("Ingrese solo un numero en uno de los campos")
+            }
+        }
+
+        function potencia() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            if (numero1.value !== "" && numero2.value !== "") {
+                let resultado = Math.pow(numero1.value, numero2.value);
+                document.getElementById("resultado").value = resultado;
+            } else {
+                alert("Ingrese ambos numeros en los campos")
+            }
+        }
+
+        function absoluto() {
+            let numero1 = document.getElementById("val1");
+            let numero2 = document.getElementById("val2");
+            if (numero1.value !== "" && numero2.value === "") {
+                let resultado = Math.abs(parseFloat(numero1.value));
+                document.getElementById("resultado").value = resultado;
+            } else if (numero2.value !== "" && numero1.value === "") {
+                let resultado = Math.abs(parseFloat(numero2.value));
+                document.getElementById("resultado").value = resultado;
+            } else {
+                alert("Ingrese solo un numero en uno de los campos")
+            }
+        }
+
+        function random()  {
+                let resultado = Math.floor(Math.random() * 100) + 1;
+                document.getElementById("resultado").value = resultado;
+            }
+
+         function redondear() {
+                let numero1 = document.getElementById("val1");
+                let numero2 = document.getElementById("val2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.round(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").value = resultado;
+                } else {
+                    alert("Ingrese numeros en ambos campos");
+                }
+            }
+
+            function redondearAbajo() {
+                let numero1 = document.getElementById("val1");
+                let numero2 = document.getElementById("val2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.floor(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").value = resultado;
+                } else {
+                    alert("Ingrese numeros en ambos campos");
+                }
+            }
+
+            function redondearArriba() {
+                let numero1 = document.getElementById("val1");
+                let numero2 = document.getElementById("val2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.ceil(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").value = resultado;
+                } else {
+                    alert("Ingrese numeros en ambos campos");
+                }
+            }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #f2f2f2;
+     text-align: center;
+     padding: 20px;
+ }
+
+ h1 {
+     color: #000000;
+     margin-bottom: 20px;
+ }
+
+ .valores input {
+     width: 100px;
+     padding: 8px;
+     margin: 5px;
+     font-size: 16px;
+ }
+
+ .operaciones button,
+ .redondeos button {
+     padding: 10px 15px;
+     margin: 5px;
+     font-size: 16px;
+     background-color: #7b7b7b;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .operaciones button:hover,
+ .redondeos button:hover {
+     background-color: #7b7b7b;
+ }
+
+ #resultado {
+     width: 200px;
+     padding: 10px;
+     font-size: 18px;
+     margin-top: 10px;
+     border: 2px solid #ccc;
+     border-radius: 5px;
+ }
+
+ .redondeos {
+     margin-top: 20px;
+ }
